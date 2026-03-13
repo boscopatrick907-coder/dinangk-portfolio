@@ -58,6 +58,39 @@
       overflow-x: hidden;
     }
 
+
+    /* ─── LANGUAGE TOGGLE ─── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+    .lang-btn {
+      padding: 0.4rem 0.9rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.45);
+      transition: all .2s;
+    }
+    .lang-btn.active {
+      background: var(--emerald);
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .lang-btn:hover:not(.active) {
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.08);
+    }
+
     /* ─── CUSTOM CURSOR ─── */
     * { cursor: none !important; }
     a, button, [href] { cursor: pointer !important; pointer-events: auto !important; }
@@ -1583,13 +1616,17 @@
           </div>
           <div class="logo-text">
             <span class="logo-name">Dinang<span class="dk">.K</span></span>
-            <span class="logo-tagline">Shopify Automation</span>
+            <span class="logo-tagline" data-en="Shopify Automation" data-fr="Automatisation Shopify">Shopify Automation</span>
           </div>
         </a>
         <div class="hero-topbar-right">
           <a href="#services">Services</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
+        </div>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -1610,34 +1647,34 @@
         <div class="hero-center-left">
           <div class="hero-specialist">
             <span class="topbar-dot"></span>
-            E-commerce Automation Specialist — Yaoundé, Cameroon
+            <span data-en="E-commerce Automation Specialist — Yaoundé, Cameroon" data-fr="Spécialiste Automatisation E-commerce — Yaoundé, Cameroun">E-commerce Automation Specialist — Yaoundé, Cameroon</span>
           </div>
 
           <div class="hero-issue">
             <span class="hero-issue-line"></span>
-            Vol. 01 — Shopify Automation Systems
+            <span data-en="Vol. 01 — Shopify Automation Systems" data-fr="Vol. 01 — Systèmes d'Automatisation Shopify">Vol. 01 — Shopify Automation Systems</span>
           </div>
 
           <h1 class="hero-headline">
             <div class="hero-bracket"></div>
-            <span class="word">YOUR</span>
-            <span class="word">STORE</span>
-            <span class="word outline">NEVER</span>
-            <span class="word red-word">SLEEPS.</span>
+            <span class="word" data-en="YOUR" data-fr="VOTRE">YOUR</span>
+            <span class="word" data-en="STORE" data-fr="BOUTIQUE">STORE</span>
+            <span class="word outline" data-en="NEVER" data-fr="NE DORT">NEVER</span>
+            <span class="word red-word" data-en="SLEEPS." data-fr="JAMAIS.">SLEEPS.</span>
           </h1>
 
           <div class="hero-desc-row">
             <div class="hero-desc-line"></div>
-            <p class="hero-desc">I build automation systems for Shopify stores that recover lost revenue, retain customers, and eliminate manual work — permanently and on autopilot.</p>
+            <p class="hero-desc" data-en="I build automation systems for Shopify stores that recover lost revenue, retain customers, and eliminate manual work — permanently and on autopilot." data-fr="Je construis des systèmes d'automatisation pour boutiques Shopify qui récupèrent les ventes perdues, fidélisent les clients et éliminent le travail manuel — définitivement en pilote automatique.">I build automation systems for Shopify stores that recover lost revenue, retain customers, and eliminate manual work — permanently and on autopilot.</p>
           </div>
 
           <div class="hero-cta-group">
-            <a href="#contact" class="btn-fill">Get Free Setup <span class="arrow">→</span></a>
-            <a href="#services" class="btn-stroke">View Services</a>
+            <a href="#contact" class="btn-fill" data-en="Get Free Setup →" data-fr="Config Gratuite →">Get Free Setup <span class="arrow">→</span></a>
+            <a href="#services" class="btn-stroke" data-en="View Services" data-fr="Voir les Services">View Services</a>
           </div>
 
           <div class="hero-scroll-hint">
-            <span>Scroll</span>
+            <span data-en="Scroll" data-fr="Défiler">Scroll</span>
             <div class="hero-scroll-line"></div>
           </div>
         </div>
@@ -1647,31 +1684,31 @@
 
           <div class="hero-card">
             <div class="hero-card-top">
-              <div class="hero-card-label">Latest trigger</div>
-              <div class="hero-card-live">Live</div>
+              <div class="hero-card-label" data-en="Latest trigger" data-fr="Dernier déclencheur">Latest trigger</div>
+              <div class="hero-card-live" data-en="Live" data-fr="En direct">Live</div>
             </div>
             <div class="hero-card-value">
               🛒 Cart abandoned — <span class="hero-card-amount">$94.00</span>
             </div>
-            <div class="hero-card-sub">Recovery email sent · 3s ago</div>
+            <div class="hero-card-sub" data-en="Recovery email sent · 3s ago" data-fr="Email de récupération envoyé · il y a 3s">Recovery email sent · 3s ago</div>
           </div>
 
           <div class="hero-metrics">
             <div class="hero-metric">
               <div class="hero-metric-val">70<span>%</span></div>
-              <div class="hero-metric-label">Carts lost</div>
+              <div class="hero-metric-label" data-en="Carts lost" data-fr="Paniers perdus">Carts lost</div>
             </div>
             <div class="hero-metric">
               <div class="hero-metric-val">~20<span>%</span></div>
-              <div class="hero-metric-label">Recovered</div>
+              <div class="hero-metric-label" data-en="Recovered" data-fr="Récupérés">Recovered</div>
             </div>
             <div class="hero-metric">
               <div class="hero-metric-val">6<span>+</span></div>
-              <div class="hero-metric-label">Automations</div>
+              <div class="hero-metric-label" data-en="Automations" data-fr="Automatisations">Automations</div>
             </div>
             <div class="hero-metric">
               <div class="hero-metric-val">0<span>h</span></div>
-              <div class="hero-metric-label">Manual work</div>
+              <div class="hero-metric-label" data-en="Manual work" data-fr="Travail manuel">Manual work</div>
             </div>
           </div>
 
@@ -1682,15 +1719,15 @@
       <div class="hero-bottom">
         <div class="hero-stat">
           <div class="hero-stat-num">70%</div>
-          <div class="hero-stat-text">Of carts abandoned<br>without follow-up</div>
+          <div class="hero-stat-text" data-en="Of carts abandoned without follow-up" data-fr="Des paniers abandonnés sans suivi">Of carts abandoned<br>without follow-up</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">6+</div>
-          <div class="hero-stat-text">Automation systems<br>ready to deploy</div>
+          <div class="hero-stat-text" data-en="Automation systems ready to deploy" data-fr="Systèmes d'automatisation prêts à déployer">Automation systems<br>ready to deploy</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">~20%</div>
-          <div class="hero-stat-text">Average cart<br>recovery rate</div>
+          <div class="hero-stat-text" data-en="Average cart recovery rate" data-fr="Taux moyen de récupération de panier">Average cart<br>recovery rate</div>
         </div>
       </div>
     </section>
@@ -1698,101 +1735,101 @@
     <!-- SERVICES -->
     <section class="services" id="services">
       <div class="services-header">
-        <div class="services-eyebrow">What I Build</div>
-        <div class="services-title">6 SYSTEMS. ONE<br><span>AUTOMATED</span> STORE.</div>
-        <div class="services-meta">Each automation deploys directly on your Shopify + Make.com account. No technical skills needed from you.</div>
+        <div class="services-eyebrow" data-en="What I Build" data-fr="Ce Que Je Construis">What I Build</div>
+        <div class="services-title" data-en="6 SYSTEMS. ONE AUTOMATED STORE." data-fr="6 SYSTÈMES. UNE BOUTIQUE AUTOMATISÉE.">6 SYSTEMS. ONE<br><span>AUTOMATED</span> STORE.</div>
+        <div class="services-meta" data-en="Each automation deploys directly on your Shopify + Make.com account. No technical skills needed from you." data-fr="Chaque automatisation se déploie directement sur votre compte Shopify + Make.com. Aucune compétence technique requise.">Each automation deploys directly on your Shopify + Make.com account. No technical skills needed from you.</div>
       </div>
 
       <div class="service-list">
         <div class="service-item">
           <div class="service-num">01 / 06</div>
           <span class="service-icon">🛒</span>
-          <div class="service-name">Abandoned Cart Recovery</div>
-          <div class="service-desc">Automatically reminds customers who left without buying. Recover 10–20% of lost sales without lifting a finger.</div>
-          <div class="service-pill">High ROI</div>
+          <div class="service-name" data-en="Abandoned Cart Recovery" data-fr="Récupération de Paniers Abandonnés">Abandoned Cart Recovery</div>
+          <div class="service-desc" data-en="Automatically reminds customers who left without buying. Recover 10–20% of lost sales without lifting a finger." data-fr="Rappelle automatiquement les clients partis sans acheter. Récupérez 10 à 20% des ventes perdues sans lever le petit doigt.">Automatically reminds customers who left without buying. Recover 10–20% of lost sales without lifting a finger.</div>
+          <div class="service-pill" data-en="High ROI" data-fr="ROI Élevé">High ROI</div>
         </div>
         <div class="service-item">
           <div class="service-num">02 / 06</div>
           <span class="service-icon">⭐</span>
-          <div class="service-name">Review Request Sequence</div>
-          <div class="service-desc">Sends a perfectly timed email 3 days after delivery asking for a review. More reviews = more trust = more sales.</div>
-          <div class="service-pill">Social Proof</div>
+          <div class="service-name" data-en="Review Request Sequence" data-fr="Séquence de Demande d'Avis">Review Request Sequence</div>
+          <div class="service-desc" data-en="Sends a perfectly timed email 3 days after delivery asking for a review. More reviews = more trust = more sales." data-fr="Envoie un email 3 jours après livraison pour demander un avis. Plus d'avis = plus de confiance = plus de ventes.">Sends a perfectly timed email 3 days after delivery asking for a review. More reviews = more trust = more sales.</div>
+          <div class="service-pill" data-en="Social Proof" data-fr="Preuve Sociale">Social Proof</div>
         </div>
         <div class="service-item">
           <div class="service-num">03 / 06</div>
           <span class="service-icon">🎉</span>
-          <div class="service-name">Order Confirmation + Upsell</div>
-          <div class="service-desc">Instant confirmation with a relevant upsell offer while the customer is still in buying mode.</div>
-          <div class="service-pill">Revenue+</div>
+          <div class="service-name" data-en="Order Confirmation + Upsell" data-fr="Confirmation de Commande + Upsell">Order Confirmation + Upsell</div>
+          <div class="service-desc" data-en="Instant confirmation with a relevant upsell offer while the customer is still in buying mode." data-fr="Confirmation instantanée avec une offre d'upsell pertinente pendant que le client est encore en mode achat.">Instant confirmation with a relevant upsell offer while the customer is still in buying mode.</div>
+          <div class="service-pill" data-en="Revenue+" data-fr="Revenu+">Revenue+</div>
         </div>
         <div class="service-item">
           <div class="service-num">04 / 06</div>
           <span class="service-icon">👋</span>
-          <div class="service-name">New Customer Welcome</div>
-          <div class="service-desc">First-time buyers get a warm welcome and a discount code — turning one-time buyers into loyal customers.</div>
-          <div class="service-pill">Retention</div>
+          <div class="service-name" data-en="New Customer Welcome" data-fr="Bienvenue Nouveau Client">New Customer Welcome</div>
+          <div class="service-desc" data-en="First-time buyers get a warm welcome and a discount code — turning one-time buyers into loyal customers." data-fr="Les premiers acheteurs reçoivent un accueil chaleureux et un code promo — transformant les acheteurs uniques en clients fidèles.">First-time buyers get a warm welcome and a discount code — turning one-time buyers into loyal customers.</div>
+          <div class="service-pill" data-en="Retention" data-fr="Fidélisation">Retention</div>
         </div>
         <div class="service-item">
           <div class="service-num">05 / 06</div>
           <span class="service-icon">📊</span>
-          <div class="service-name">Weekly Sales Report</div>
-          <div class="service-desc">Every Monday you receive an automatic digest of total orders and revenue from the past 7 days. Stay informed.</div>
-          <div class="service-pill">Insights</div>
+          <div class="service-name" data-en="Weekly Sales Report" data-fr="Rapport de Ventes Hebdomadaire">Weekly Sales Report</div>
+          <div class="service-desc" data-en="Every Monday you receive an automatic digest of total orders and revenue from the past 7 days. Stay informed." data-fr="Chaque lundi vous recevez un résumé automatique des commandes et revenus des 7 derniers jours. Restez informé.">Every Monday you receive an automatic digest of total orders and revenue from the past 7 days. Stay informed.</div>
+          <div class="service-pill" data-en="Insights" data-fr="Analyses">Insights</div>
         </div>
         <div class="service-item">
           <div class="service-num">06 / 06</div>
           <span class="service-icon">💌</span>
-          <div class="service-name">Win-back Campaign</div>
-          <div class="service-desc">Customers inactive for 30 days automatically receive a personalized discount that brings them back.</div>
-          <div class="service-pill">Loyalty</div>
+          <div class="service-name" data-en="Win-back Campaign" data-fr="Campagne de Reconquête">Win-back Campaign</div>
+          <div class="service-desc" data-en="Customers inactive for 30 days automatically receive a personalized discount that brings them back." data-fr="Les clients inactifs depuis 30 jours reçoivent automatiquement une réduction personnalisée qui les ramène.">Customers inactive for 30 days automatically receive a personalized discount that brings them back.</div>
+          <div class="service-pill" data-en="Loyalty" data-fr="Loyauté">Loyalty</div>
         </div>
       </div>
     </section>
 
     <!-- PROCESS — AUTO-SCROLL -->
     <section class="process-wrapper" id="process">
-      <div class="process-eyebrow">How it works</div>
+      <div class="process-eyebrow" data-en="How it works" data-fr="Comment ça marche">How it works</div>
       <div class="process-track">
         <div class="process-card">
           <div class="process-card-num">01</div>
-          <div class="process-card-title">Discovery Call</div>
-          <p class="process-card-desc">We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue.</p>
+          <div class="process-card-title" data-en="Discovery Call" data-fr="Appel Découverte">Discovery Call</div>
+          <p class="process-card-desc" data-en="We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue." data-fr="On parle de votre boutique, vos défis, et des automatisations qui auront le plus d'impact immédiat sur vos revenus.">We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">02</div>
-          <div class="process-card-title">I Build It</div>
-          <p class="process-card-desc">I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code.</p>
+          <div class="process-card-title" data-en="I Build It" data-fr="Je Construis">I Build It</div>
+          <p class="process-card-desc" data-en="I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code." data-fr="Je configure tout directement sur vos comptes Make.com et Shopify. Vous n'avez pas besoin de toucher une seule ligne de code.">I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">03</div>
-          <div class="process-card-title">Live Testing</div>
-          <p class="process-card-desc">We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live.</p>
+          <div class="process-card-title" data-en="Live Testing" data-fr="Tests en Direct">Live Testing</div>
+          <p class="process-card-desc" data-en="We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live." data-fr="On teste chaque automatisation de bout en bout ensemble — pour s'assurer que tout se déclenche correctement avant le lancement.">We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">04</div>
-          <div class="process-card-title">Runs Forever</div>
-          <p class="process-card-desc">Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot.</p>
+          <div class="process-card-title" data-en="Runs Forever" data-fr="Tourne Pour Toujours">Runs Forever</div>
+          <p class="process-card-desc" data-en="Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot." data-fr="Votre boutique est entièrement automatisée. Les revenus se récupèrent, les clients s'engagent, et vous recevez des rapports hebdomadaires.">Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot.</p>
         </div>
         <!-- Duplicate for infinite scroll -->
         <div class="process-card">
           <div class="process-card-num">01</div>
-          <div class="process-card-title">Discovery Call</div>
-          <p class="process-card-desc">We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue.</p>
+          <div class="process-card-title" data-en="Discovery Call" data-fr="Appel Découverte">Discovery Call</div>
+          <p class="process-card-desc" data-en="We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue." data-fr="On parle de votre boutique, vos défis, et des automatisations qui auront le plus d'impact immédiat sur vos revenus.">We talk about your store, your biggest challenges, and which automations will have the most immediate impact on your revenue.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">02</div>
-          <div class="process-card-title">I Build It</div>
-          <p class="process-card-desc">I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code.</p>
+          <div class="process-card-title" data-en="I Build It" data-fr="Je Construis">I Build It</div>
+          <p class="process-card-desc" data-en="I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code." data-fr="Je configure tout directement sur vos comptes Make.com et Shopify. Vous n'avez pas besoin de toucher une seule ligne de code.">I set everything up directly on your Make.com and Shopify accounts. You don't need to touch a single line of code.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">03</div>
-          <div class="process-card-title">Live Testing</div>
-          <p class="process-card-desc">We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live.</p>
+          <div class="process-card-title" data-en="Live Testing" data-fr="Tests en Direct">Live Testing</div>
+          <p class="process-card-desc" data-en="We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live." data-fr="On teste chaque automatisation de bout en bout ensemble — pour s'assurer que tout se déclenche correctement avant le lancement.">We test every single automation end-to-end together — making sure every flow triggers and sends correctly before going live.</p>
         </div>
         <div class="process-card">
           <div class="process-card-num">04</div>
-          <div class="process-card-title">Runs Forever</div>
-          <p class="process-card-desc">Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot.</p>
+          <div class="process-card-title" data-en="Runs Forever" data-fr="Tourne Pour Toujours">Runs Forever</div>
+          <p class="process-card-desc" data-en="Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot." data-fr="Votre boutique est entièrement automatisée. Les revenus se récupèrent, les clients s'engagent, et vous recevez des rapports hebdomadaires.">Your store is fully automated. Revenue recovers, customers engage, and you get weekly reports — permanently on autopilot.</p>
         </div>
       </div>
     </section>
@@ -1800,13 +1837,13 @@
     <!-- OFFER -->
     <div class="offer">
       <div>
-        <div class="offer-eyebrow">Limited availability — 2025</div>
+        <div class="offer-eyebrow" data-en="Limited availability — 2025" data-fr="Places limitées — 2025">Limited availability — 2025</div>
         <div class="offer-title">
           FREE<br>
           <span class="outline">SETUP.</span><br>
           REAL RESULTS.
         </div>
-        <p class="offer-sub">I'm offering free automation setup for 2–3 Shopify stores in exchange for a short testimony. No cost, no risk — just results delivered directly on your store.</p>
+        <p class="offer-sub" data-en="I'm offering free automation setup for 2–3 Shopify stores in exchange for a short testimony. No cost, no risk — just results delivered directly on your store." data-fr="Je propose une configuration gratuite pour 2 à 3 boutiques Shopify en échange d'un court témoignage. Aucun coût, aucun risque — juste des résultats livrés sur votre boutique.">I'm offering free automation setup for 2–3 Shopify stores in exchange for a short testimony. No cost, no risk — just results delivered directly on your store.</p>
       </div>
       <a href="/cdn-cgi/l/email-protection#5e3c312d3d312e3f2a2c373d35676e691e39333f3732703d3133" target="_blank" class="btn-white-solid">Claim Your Spot →</a>
       <div class="offer-bg">FREE</div>
@@ -1817,7 +1854,7 @@
       <div class="contact-top">
         <div class="contact-headline">
           <h2>LET'S<br>BUILD<br><span>YOURS.</span></h2>
-          <p>Based in Yaoundé, Cameroon. Working with Shopify store owners remotely worldwide. Fluent in English and French.</p>
+          <p data-en="Based in Yaoundé, Cameroon. Working with Shopify store owners remotely worldwide. Fluent in English and French." data-fr="Basé à Yaoundé, Cameroun. Je travaille avec les propriétaires de boutiques Shopify à distance dans le monde entier. Bilingue anglais et français.">Based in Yaoundé, Cameroon. Working with Shopify store owners remotely worldwide. Fluent in English and French.</p>
         </div>
         <div class="contact-links-panel">
           <a href="/cdn-cgi/l/email-protection#6f0d001c0c001f0e1b1d060c04565f582f08020e0603410c0002" target="_blank" class="contact-link">
@@ -1844,16 +1881,16 @@
       </div>
       <div class="contact-bottom">
         <div class="checklist-panel">
-          <h3>What You Get Free</h3>
-          <div class="check-row"><div class="check-mark">✓</div>Full setup of up to 3 automations on your live store</div>
-          <div class="check-row"><div class="check-mark">✓</div>Configured directly on your Shopify + Make.com account</div>
-          <div class="check-row"><div class="check-mark">✓</div>End-to-end testing until everything fires perfectly</div>
-          <div class="check-row"><div class="check-mark">✓</div>Your choice of automations from the full library</div>
-          <div class="check-row"><div class="check-mark">✓</div>All I ask: a short testimony if it delivers results</div>
+          <h3 data-en="What You Get Free" data-fr="Ce Que Vous Obtenez Gratuitement">What You Get Free</h3>
+          <div class="check-row"><div class="check-mark">✓</div><span data-en="Full setup of up to 3 automations on your live store" data-fr="Configuration complète de 3 automatisations sur votre boutique">Full setup of up to 3 automations on your live store</span></div>
+          <div class="check-row"><div class="check-mark">✓</div><span data-en="Configured directly on your Shopify + Make.com account" data-fr="Configuré directement sur votre compte Shopify + Make.com">Configured directly on your Shopify + Make.com account</span></div>
+          <div class="check-row"><div class="check-mark">✓</div><span data-en="End-to-end testing until everything fires perfectly" data-fr="Tests complets jusqu'à ce que tout fonctionne parfaitement">End-to-end testing until everything fires perfectly</span></div>
+          <div class="check-row"><div class="check-mark">✓</div><span data-en="Your choice of automations from the full library" data-fr="Votre choix d'automatisations parmi la bibliothèque complète">Your choice of automations from the full library</span></div>
+          <div class="check-row"><div class="check-mark">✓</div><span data-en="All I ask: a short testimony if it delivers results" data-fr="Tout ce que je demande : un court témoignage si ça donne des résultats">All I ask: a short testimony if it delivers results</span></div>
         </div>
         <div class="badge-panel">
           <div class="badge-num">2</div>
-          <div class="badge-text">Free spots<br>remaining<br>— act now</div>
+          <div class="badge-text" data-en="Free spots remaining — act now" data-fr="Places gratuites restantes — agissez maintenant">Free spots<br>remaining<br>— act now</div>
           <a href="/cdn-cgi/l/email-protection#2c4e435f4f435c4d585e454f47151c1b6c4b414d4540024f4341" target="_blank" class="badge-cta">Claim Your Spot</a>
         </div>
       </div>
@@ -1876,7 +1913,7 @@
         </div>
         <div class="logo-text">
           <span class="logo-name">Dinang<span class="dk">.K</span></span>
-          <span class="logo-tagline">E-commerce Automation</span>
+          <span class="logo-tagline" data-en="E-commerce Automation" data-fr="Automatisation E-commerce">E-commerce Automation</span>
         </div>
       </a>
       <div class="footer-copy">© 2025 Dinang.K — E-commerce Automation — Yaoundé, Cameroon</div>
@@ -1904,4 +1941,66 @@
     const mobileNav = document.getElementById('mobileNav');
     if (hamburger && mobileNav) {
       hamburger.addEventListener('click', () => {
-        hamb
+        hamburger.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+      });
+    }
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    // Hero stats animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.hero-stat').forEach(s => observer.observe(s));
+
+    // Auto-scroll process track
+    const track = document.querySelector('.process-track');
+    if (track) {
+      let pos = 0;
+      let paused = false;
+      track.addEventListener('mouseenter', () => paused = true);
+      track.addEventListener('mouseleave', () => paused = false);
+      setInterval(() => {
+        if (!paused) {
+          pos += 0.5;
+          if (pos >= track.scrollWidth / 2) pos = 0;
+          track.scrollLeft = pos;
+        }
+      }, 16);
+    }
+  </script>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (!text) return;
+        if (text.includes('<') || el.innerHTML.includes('<br>')) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
+      });
+      try { localStorage.setItem('lang', lang); } catch(e) {}
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const saved = localStorage.getItem('lang');
+        if (saved === 'fr') setLang('fr');
+      } catch(e) {}
+    });
+  </script>
+
+</body>
+</html>
